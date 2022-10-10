@@ -1,0 +1,46 @@
+version: '3.8'
+services:
+  sql-server:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: DateApp
+      MYSQL_USER: meadas
+      MYSQL_PASSWORD: vQVurD22RbAu
+      MYSQL_ROOT_PASSWORD: 5Zp8WZkujQZb
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      - appnetwork
+  appback:
+    build:
+      context: ./appback
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    depends_on:
+      sql-server:
+         condition: service_started
+    networks:
+      - appnetwork
+  appfront:
+    build:
+      context: ./appfront
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    depends_on:
+      appback:
+        condition: service_started
+    networks:
+      - appnetwork
+
+volumes:
+  db:
+
+networks:
+  appnetwork:
+    driver: bridge
