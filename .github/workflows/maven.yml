@@ -27,6 +27,8 @@ jobs:
         distribution: 'corretto'
         cache: maven
     - name: Build with Maven
-      run: mvn -b package --file pom.xml
+      
+      run: find appback  
+           mvn -b package --file pom.xml
       
       
