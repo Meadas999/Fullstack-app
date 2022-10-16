@@ -22,6 +22,8 @@ jobs:
         image: meadas/dateapprepo
         tags: backend
         registry: docker.io
+        context: ./appback
+        dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
   
