@@ -21,8 +21,8 @@ jobs:
       with:
         image: meadas/dateapprepo
         tags: backend
-        registry: registry-url.io
-        dockerfile: Dockerfile.ci
+        registry: docker.io
+        dockerfile: ./appback/Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
   
