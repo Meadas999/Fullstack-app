@@ -22,7 +22,7 @@ jobs:
         image: meadas/dateapprepo
         tags: backend
         registry: docker.io
-        dockerfile: /home/runner/work/Fullstack-app/Fullstack-app/Appback/Dockerfile
+        dockerfile: /home/runner/work/Fullstack-app/Fullstack-app/Appback/
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
   
