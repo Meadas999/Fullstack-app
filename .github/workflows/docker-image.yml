@@ -23,7 +23,6 @@ jobs:
         tags: backend
         registry: docker.io
         directory: /home/runner/work/Fullstack-app/Fullstack-app/Appback/
-        dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
   
