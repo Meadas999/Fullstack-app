@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - run: ls /home/runner/work/Fullstack-app/Fullstack-app
+    - run: ls /home/runner/work/Fullstack-app/Fullstack-app/Appback
 
     - uses: mr-smithers-excellent/docker-build-push@v5
       name: Build & push Docker image
@@ -23,7 +23,7 @@ jobs:
         image: meadas/dateapprepo
         tags: backend
         registry: docker.io
-        dockerfile: /home/runner/work/Fullstack-app/Fullstack-app/Appback/
+        dockerfile: /home/runner/work/Fullstack-app/Fullstack-app/Appback
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
   
